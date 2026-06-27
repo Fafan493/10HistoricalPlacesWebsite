@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Feedback</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+  :root {
+    --parchment: #F5F0E6;
+    --parchment-deep: #ECE3D0;
+    --ink: #1B2A3C;
+    --brass: #B8893E;
+    --terracotta: #A8553D;
+    --sage: #7A8C6F;
+    --line: rgba(27,42,60,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(184,137,62,0.06), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(168,85,61,0.05), transparent 40%);
+  }
+
+
+  /* ---------- HEADER ---------- */
+
+  .site-header{
+      display:flex;
+      gap:20px;
+      padding:25px 8vw;
+      background:var(--sage);
+      border-bottom:1px solid var(--line);
+  }
+
+  .logo{
+      width:80px;
+      height:auto;
+  }
+
+  .site-title{
+      text-align:left;
+  }
+
+  .site-title h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:42px;
+      margin:0;
+      color:var(--parchment);
+  }
+
+  .site-title p{
+      margin-top:5px;
+      font-size:15px;
+      color:var(--terracotta);
+      letter-spacing:1px;
+  }
+
+  /*----- Navigation Bar ------*/
+
+  nav{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+  }
+
+  nav ul{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      background: var(--ink);
+  }
+
+  nav li{
+      list-style: none;
+  }
+
+  nav a{
+      display: block;
+      color: white;
+      padding: 16px 24px;
+      text-decoration: none;
+      transition: .3s;
+  }
+
+  nav a:hover{
+      background: var(--sage);
+  }
+
+  nav a.active{
+      background: var(--brass);
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background:var(--ink);
+    min-width: 260px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .dropdown-content a:hover {
+    background:var(--sage);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 90px 8vw 70px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
+    max-width: 820px;
+    color: var(--ink);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--brass);
+  }
+
+  .p {
+    text-align: justify;
+    hyphens: auto;
+  }
+  
+
+  .hero-meta {
+    margin-top: 36px;
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta div {
+    background:rgba(255,255,255,.35);
+    padding:18px;
+    border-radius:12px;
+    min-width: 140px;
+    font-size: 13px;
+    color: rgba(27,42,60,0.55);
+  }
+
+  .hero-meta{
+    font-size: 13px;
+    color: rgba(27,42,60,0.55);
+  }
+
+  .hero-meta strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ---------- FEEDBACK ---------- */
+
+    .feedback{
+        max-width:850px;
+        margin:80px auto;
+        padding:50px;
+        background:white;
+        border-radius:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .feedback h2{
+        font-family:'Cormorant Garamond', serif;
+        font-size:46px;
+        text-align:center;
+        margin-bottom:15px;
+    }
+
+    .feedback p{
+        text-align:center;
+        margin-bottom:35px;
+        color:#666;
+    }
+
+    .input-group{
+        margin-bottom:25px;
+    }
+
+    .input-group label{
+        display:block;
+        margin-bottom:8px;
+        font-weight:600;
+    }
+
+    input,
+
+    select,
+
+    textarea{
+        width:100%;
+        padding:14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:15px;
+        font-family:inherit;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+
+    .rating{
+        display:flex;
+        gap:20px;
+        flex-wrap:wrap;
+    }
+
+    .rating input{
+        width:auto;
+    }
+
+    .checkbox{
+        margin:25px 0;
+    }
+
+    .checkbox input{
+        width:auto;
+        margin-right:10px;
+    }
+
+    button{
+        width:100%;
+        padding:16px;
+        border:none;
+        border-radius:8px;
+        background:var(--brass);
+        color:white;
+        font-size:17px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    button:hover{
+        background:var(--sage);
+    }
+
+  /* ---------- FOOTER ---------- */
+  .site-footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 8vw;
+        flex-wrap: wrap;
+        font-size: 12px;
+        font-style: italic;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 29, 29);
+    }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 6vw 50px; }
+    .grid-section { padding: 48px 6vw 70px; }
+  }
+
+</style>
+
+<body>
+    <!-- Logo / Title -->
+        <div class="site-header">
+
+            <img src="logo.jpeg" alt="Website Logo" class="logo">
+            <div class="site-title">
+                <h1>10 Historical Places in Kedah</h1>
+                <p>Discover the Heritage of Malaysia's Oldest State</p>
+            </div>
+
+        </div>
+
+    <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li class="dropdown">
+                <a href="places.html" class="dropbtn">Historical Places ▼</a>
+
+                <div class="dropdown-content">
+                    <a href="1rktdm.html">1. Rumah Kelahiran Tun Dr. Mahathir</a>
+                    <a href="2kotakualakedah.html">2. Kota Kuala Kedah</a>
+                    <a href="3arkeolb.html">3. Muzium Arkeologi Lembah Bujang</a>
+                    <a href="4krm.html">4. Kedah Royal Musuem</a>
+                    <a href="5ksm.html">5. Kedah State Musuem</a>
+                    <a href="6sbas.html">6. Tapak Arkeologi Sungai Batu</a>
+                    <a href="7ksag.html">7. Kedah State Art Gallery</a>
+                    <a href="8cbbp.html">8. Candi Bukit Batu Pahat</a>
+                    <a href="9is.html">9. Istana Sepachendera</a>
+                    <a href="10gakm.html">10. Gallery Archeotourism Kuala Muda</a>
+                </div>
+                </li>
+
+                <li><a class="active" href="feedback.html">Feedback</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+
+    <!-- HEADER SECTION -->
+
+    <section class="hero">
+        <div class="hero-eyebrow">IML470 — Web Development</div>
+        <h1>Ten places that <em>refused</em><br>to be forgotten.</h1>
+        <p>Welcome to Kedah's digital heritage portal, where thousands of years of history come alive. As the "Jelapang Padi" of Malaysia, Kedah holds the title of the 
+        oldest state in the country, boasting a rich tapestry of ancient empires, royal legacies, and early Southeast Asian civilization.
+        </p>
+
+        <div class="hero-meta">
+        <div><strong>10</strong>Destinations</div>
+        <div><strong>2</strong>Districts</div>
+        <div><strong>2,800+</strong>Years of history</div>
+        </div>
+    </section>
+
+    <!-- FEEDBACK SECTION -->
+
+    <section class="feedback">
+
+        <h2>We'd Love Your Feedback</h2>
+
+        <p>
+            Thank you for visiting our website. Your feedback helps us
+            improve the quality of our digital heritage project.
+        </p>
+
+        <form>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name">
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="example@email.com">
+            </div>
+
+            <div class="input-group">
+                <label>How would you rate this website?</label>
+
+                <div class="rating">
+                    <input type="radio" name="rate"> Excellent
+                    <input type="radio" name="rate"> Good
+                    <input type="radio" name="rate"> Average
+                    <input type="radio" name="rate"> Poor
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label>Favourite Section</label>
+
+                <select>
+                    <option>Choose One</option>
+                    <option>Home</option>
+                    <option>Historical Places</option>
+                    <option>References</option>
+                    <option>Overall Website Design</option>
+                </select>
+
+            </div>
+
+            <div class="input-group">
+                <label>Comments or Suggestions</label>
+                <textarea rows="6"
+                placeholder="Share your thoughts..."></textarea>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox">
+                I would recommend this website to others.
+            </div>
+
+            <button type="submit">Submit Feedback</button>
+
+        </form>
+
+    </section>
+
+    <footer class="site-footer">
+        10 Historical Places — IML470 Web Design and Development
+        <br>
+        IML470 Web Design and Development
+        <br>
+        Faculty of Information Management
+        <p>Universiti Teknologi MARA</p>
+        <br>
+        © 2026 All Rights Reserved
+    </footer>
+
+</body>

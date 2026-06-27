@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>10 Historical Places in Kedah</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+  :root {
+    --parchment: #F5F0E6;
+    --parchment-deep: #ECE3D0;
+    --ink: #1B2A3C;
+    --brass: #B8893E;
+    --terracotta: #A8553D;
+    --sage: #7A8C6F;
+    --line: rgba(27,42,60,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(184,137,62,0.06), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(168,85,61,0.05), transparent 40%);
+  }
+
+  /* ---------- HEADER ---------- */
+
+  .site-header{
+      display:flex;
+      gap:20px;
+      padding:25px 8vw;
+      background:var(--sage);
+      border-bottom:1px solid var(--line);
+  }
+
+  .logo{
+      width:80px;
+      height:auto;
+  }
+
+  .site-title{
+      text-align:left;
+  }
+
+  .site-title h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:42px;
+      margin:0;
+      color:var(--parchment);
+  }
+
+  .site-title p{
+      margin-top:5px;
+      font-size:15px;
+      color:var(--terracotta);
+      letter-spacing:1px;
+  }
+
+  /*----- Navigation Bar ------*/
+
+  nav{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+  }
+
+  nav ul{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      background: var(--ink);
+  }
+
+  nav li{
+      list-style: none;
+  }
+
+  nav a{
+      display: block;
+      color: white;
+      padding: 16px 24px;
+      text-decoration: none;
+      transition: .3s;
+  }
+
+  nav a:hover{
+      background: var(--sage);
+  }
+
+  nav a.active{
+      background: var(--brass);
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background:var(--ink);
+    min-width: 260px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .dropdown-content a:hover {
+    background:var(--sage);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* ---------- GRID SECTION ---------- */
+  .grid-section {
+    padding: 64px 8vw 100px;
+  }
+
+  .grid-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .grid-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .grid-heading span {
+    font-size: 13px;
+    color: rgba(27,42,60,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+  }
+
+  .card {
+    background: var(--parchment-deep);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px -12px rgba(27,42,60,0.25);
+    border-color: var(--brass);
+  }
+
+  .card-image {
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    background-color: #c9b896;
+    position: relative;
+  }
+  .card-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(27,42,60,0.35), rgba(184,137,62,0.25));
+  }
+
+  .stamp {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px dashed rgba(245,240,230,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    background: rgba(27,42,60,0.45);
+    backdrop-filter: blur(2px);
+    transform: rotate(-8deg);
+  }
+
+  .card-body {
+    padding: 20px 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-region {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: rgba(27,42,60,0.65);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .card-footer {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .card-footer .arrow {
+    transition: transform 0.2s ease;
+    color: var(--brass);
+  }
+
+  .card:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  .card-footer .era {
+    color: rgba(27,42,60,0.45);
+    font-weight: 400;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 8vw;
+    flex-wrap: wrap;
+    font-size: 12px;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    background-color: rgb(29, 29, 29);
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 6vw 50px; }
+    .grid-section { padding: 48px 6vw 70px; }
+  }
+</style> 
+</head>
+
+<body>
+
+  <!-- Logo / Title -->
+    <div class="site-header">
+
+        <img src="logo.jpeg" alt="Website Logo" class="logo">
+        <div class="site-title">
+            <h1>10 Historical Places in Kedah</h1>
+            <p>Discover the Heritage of Malaysia's Oldest State</p>
+        </div>
+
+    </div>
+
+  <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+              <a class="active" href="places.html" class="dropbtn">Historical Places ▼</a>
+
+              <div class="dropdown-content">
+                <a href="1rktdm.html">1. Rumah Kelahiran Tun Dr. Mahathir</a>
+                <a href="2kotakualakedah.html">2. Kota Kuala Kedah</a>
+                <a href="3arkeolb.html">3. Muzium Arkeologi Lembah Bujang</a>
+                <a href="4krm.html">4. Kedah Royal Musuem</a>
+                <a href="5ksm.html">5. Kedah State Musuem</a>
+                <a href="6sbas.html">6. Tapak Arkeologi Sungai Batu</a>
+                <a href="7ksag.html">7. Kedah State Art Gallery</a>
+                <a href="8cbbp.html">8. Candi Bukit Batu Pahat</a>
+                <a href="9is.html">9. Istana Sepachendera</a>
+                <a href="10gakm.html">10. Gallery Archeotourism Kuala Muda</a>
+              </div>
+            </li>
+
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+  <!-- GRID SECTION -->
+
+  <section class="grid-section">
+    <div class="grid-heading">
+      <h2>Choose your destination</h2>
+      <span>Click any stamp to explore</span>
+    </div>
+
+    <div class="card-grid">
+
+      <a class="card" href="1rktdm.html">
+        <div class="card-image" style="background-image:url('tdrmahathir.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#1</div>
+          <h3>Tun Dr. Mahathir Mohamad's Birth Home</h3>
+          <p>The preserved childhood wooden home of Malaysia's longest serving Prime Minister.</p>
+          <div class="card-footer"><span class="era">~1900s (126 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="2kotakualakedah.html">
+        <div class="card-image" style="background-image:url('kotakualakedah.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#2</div>
+          <h3>Kuala Kedah Fort Museum</h3>
+          <p>A historic coastal museum built entirely inside the stone walls of a 200 year old fort</p>
+          <div class="card-footer"><span class="era">~1771s (255 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="3arkeolb.html">
+        <div class="card-image" style="background-image:url('lembahbujang.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#3</div>
+          <h3>Lembah Bujang Archeological Museum</h3>
+          <p>Malaysia's gateway to an ancient trading empire, housing salvaged 1,000 year old stone temples.</p>
+          <div class="card-footer"><span class="era">~11th Century AD (1,000+ years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="4krm.html">
+        <div class="card-image" style="background-image:url('muziumdirajakedah.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#4</div>
+          <h3>Kedah Royal Museum</h3>
+          <p>The former grand wooden palace dedicated exclusively to the legacy of the Kedah Sultanate.</p>
+          <div class="card-footer"><span class="era">~1735s (291 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="5ksm.html">
+        <div class="card-image" style="background-image:url('muziumnegeri.jpg')"></div>
+        <div class="card-body">
+          <div class="card-region">#5</div>
+          <h3>Kedah State Museum</h3>
+          <p>The grand state museum showcasing Keedah's complete history, royal regalia, and rice-farming heritage.</p>
+          <div class="card-footer"><span class="era">~1957 (69 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="6sbas.html">
+        <div class="card-image" style="background-image:url('tapakakreologi.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#6</div>
+          <h3>Sungai Batu Archeological Site</h3>
+          <p>Southeast Asia's oldest civilization site, featuring massive 2,800 years old iron smelting ruin.</p>
+          <div class="card-footer"><span class="era">~788 BC (over 2,800 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="7ksag.html">
+        <div class="card-image" style="background-image:url('kedahstateartgallery.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#7</div>
+          <h3>Kedah State Art Gallery</h3>
+          <p>A beautiful 1912 Neo-Classical landmark celebrating local paintings and modern visual arts.</p>
+          <div class="card-footer"><span class="era">~1912s (144 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="8cbbp.html">
+        <div class="card-image" style="background-image:url('candibatu.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#8</div>
+          <h3>Bukit Batu Pahat Temple Ruin</h3>
+          <p>The most famous and perfectly reassembled Hindu granite temple ruin on the slopes of mount Jerai.</p>
+          <div class="card-footer"><span class="era">11th century AD (1,000 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="9is.html">
+        <div class="card-image" style="background-image:url('istana.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#9</div>
+          <h3>Sepachendera Palace</h3>
+          <p>A hauntingly beautiful 19th century royal palace ruin built as a symbol of royal love.</p>
+          <div class="card-footer"><span class="era">~1882s (144 years)</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="10gakm.html">
+        <div class="card-image" style="background-image:url('sungaimerbok.jpg')">
+        </div>
+        <div class="card-body">
+          <div class="card-region">#10</div>
+          <h3>Kuala Muda Archeotourism Gallery</h3>
+          <p>The modern digital tecch hub and info gateway mapping kedah Tua's archeological trails.</p>
+          <div class="card-footer"><span class="era">2,800 years of history</span><span class="arrow">Explore →</span></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    10 Historical Places — IML470 Web Design and Development
+    <br>
+    IML470 Web Design and Development
+    <br>
+    Faculty of Information Management
+    <p>Universiti Teknologi MARA</p>
+    <br>
+    © 2026 All Rights Reserved
+  </footer>
+
+</body>
+</html>

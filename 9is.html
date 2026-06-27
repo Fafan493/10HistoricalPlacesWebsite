@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Istana Sepachendera</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<link href="lightbox2-2.12.0/dist/css/lightbox.min.css" rel="stylesheet">
+
+<style>
+
+    :root {
+    --parchment: #F5F0E6;
+    --parchment-deep: #ECE3D0;
+    --ink: #1B2A3C;
+    --brass: #B8893E;
+    --terracotta: #A8553D;
+    --sage: #7A8C6F;
+    --line: rgba(27,42,60,0.15);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: var(--parchment);
+        color: var(--ink);
+        font-family: 'Inter', sans-serif;
+        background-image:
+        radial-gradient(circle at 20% 10%, rgba(184,137,62,0.06), transparent 40%),
+        radial-gradient(circle at 80% 90%, rgba(168,85,61,0.05), transparent 40%);
+  }
+
+     /* ---------- HEADER ---------- */
+
+    .site-header{
+        display:flex;
+        gap:20px;
+        padding:25px 8vw;
+        background:var(--sage);
+        border-bottom:1px solid var(--line);
+    }
+
+    .logo{
+        width:80px;
+        height:auto;
+    }
+
+    .site-title{
+        text-align:left;
+    }
+
+    .site-title h1{
+        font-family:'Cormorant Garamond', serif;
+        font-size:42px;
+        margin:0;
+        color:var(--parchment);
+    }
+
+    .site-title p{
+        margin-top:5px;
+        font-size:15px;
+        color:var(--terracotta);
+        letter-spacing:1px;
+    }
+
+    /*----- Navigation Bar ------*/
+
+    nav{
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        background: var(--ink);
+    }
+
+    nav li{
+        list-style: none;
+    }
+
+    nav a{
+        display: block;
+        color: white;
+        padding: 16px 24px;
+        text-decoration: none;
+        transition: .3s;
+    }
+
+    nav a:hover{
+        background: var(--sage);
+    }
+
+    nav a.active{
+        background: var(--brass);
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background:var(--ink);
+        min-width: 260px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: block;
+        white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+        background:var(--sage);
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* ---------- GALLERY ---------- */
+
+    .gallery{
+        max-width:1100px;
+        margin:60px auto;
+    }
+
+    .gallery h2{
+        font-family:'Cormorant Garamond',serif;
+        font-size:42px;
+        margin-bottom:25px;
+        text-align:center;
+    }
+
+    .main-image{
+        width:100%;
+        height:450px;
+        object-fit:cover;
+        border-radius:15px;
+        box-shadow:0 8px 20px rgba(0,0,0,.15);
+    }
+
+    .thumbnail-row{
+        display:flex;
+        gap:15px;
+        margin-top:20px;
+    }
+
+    .thumbnail-row img{
+        flex:1;
+        height:140px;
+        object-fit:cover;
+        border-radius:10px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    .thumbnail-row img:hover{
+        transform:scale(1.05);
+    }
+
+    /* ---------- QUICK INFO ---------- */
+
+    .quick-info{
+        padding:70px 8vw;
+    }
+
+    .quick-info h2{
+        text-align:center;
+        font-family:'Cormorant Garamond', serif;
+        font-size:42px;
+        margin-bottom:40px;
+    }
+
+    .info-grid{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:25px;
+    }
+
+    .info-card{
+        background:white;
+        border-radius:12px;
+        padding:25px;
+        box-shadow:0 8px 20px rgba(0,0,0,.08);
+        border-top:5px solid var(--brass);
+        transition:.3s;
+    }
+
+    .info-card:hover{
+        transform:translateY(-5px);
+    }
+
+    .info-card h3{
+        margin-bottom:10px;
+        color:var(--terracotta);
+        font-size:18px;
+    }
+
+    .info-card p{
+        line-height:1.7;
+        margin:0;
+    }
+
+    /*----- INFO ------*/
+
+    .content-section{
+        max-width:80%;
+        margin:10px auto;
+        padding:40px;
+        background:white;
+        border-radius:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .content-section h2{
+        font-family:'Cormorant Garamond', serif;
+        font-size:42px;
+        color:var(--ink);
+        margin-bottom:20px;
+        border-left:6px solid var(--brass);
+        padding-left:15px;
+    }
+
+    .content-section p{
+        line-height:1.9;
+        text-align:justify;
+        margin-bottom:18px;
+    }
+
+    .content-section ul{
+        padding-left:25px;
+        line-height:2;
+    }
+
+    .hero {
+        padding: 90px 8vw 70px;
+        border-bottom: 1px solid var(--line);
+        position: relative;
+    }
+
+    .hero h1{
+        font-family:'Cormorant Garamond',serif;
+        font-size:64px;
+        margin-bottom:20px;
+    }
+
+    .hero p{
+        font-size:18px;
+        line-height:1.8;
+        max-width:900px;
+        text-align: justify;
+    }
+
+    .hero-eyebrow {
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        font-weight: 600;
+        margin-bottom: 18px;
+    }
+
+
+    .image-row {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-row img {
+        width: 220px;       
+        height: 160px;       
+        object-fit: cover;   
+        border-radius: 12px;
+        transition:.3s;
+        box-shadow:0 8px 20px rgba(0,0,0,.15);
+    }
+
+    .image-row img:hover{
+        transform:scale(1.05);
+    }
+
+    /* ---------- MAPS ---------- */
+
+    .map-section{
+        padding:80px 8vw;
+        text-align:center;
+    }
+
+    .map-section h2{
+        font-family:'Cormorant Garamond', serif;
+        font-size:42px;
+        margin-bottom:30px;
+    }
+
+    .map-section iframe{
+        width:100%;
+        max-width:1000px;
+        height:500px;
+        border:none;
+        border-radius:15px;
+        box-shadow:0 12px 30px rgba(0,0,0,.15);
+    }
+
+    /* ---------- BUTTONS ---------- */
+
+    .page-navigation{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:60px 8vw;
+        gap:20px;
+    }
+
+    .nav-btn,
+    .top-btn{
+
+        text-decoration:none;
+        background:var(--ink);
+        color:white;
+        padding:14px 28px;
+        border-radius:8px;
+        transition:.3s;
+        font-weight:500;
+    }
+
+    .nav-btn:hover,
+    .top-btn:hover{
+
+        background:var(--sage);
+
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .site-footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 8vw;
+        flex-wrap: wrap;
+        font-size: 12px;
+        font-style: italic;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 29, 29);
+    }
+
+  @media (max-width: 600px) {
+      .hero { padding: 60px 6vw 50px; }
+      .grid-section { padding: 48px 6vw 70px; }
+      .info-grid { grid-template-columns: 1fr;}
+    }
+
+
+</style>
+</head>
+<body>
+
+    <!-- Logo / Title -->
+    <div class="site-header">
+
+        <img src="logo.jpeg" alt="Website Logo" class="logo">
+        <div class="site-title">
+            <h1>10 Historical Places in Kedah</h1>
+            <p>Discover the Heritage of Malaysia's Oldest State</p>
+        </div>
+
+    </div>
+
+  <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+              <a href="places.html" class="dropbtn">Historical Places ▼</a>
+
+              <div class="dropdown-content">
+                <a href="1rktdm.html">1. Rumah Kelahiran Tun Dr. Mahathir</a>
+                <a href="2kotakualakedah.html">2. Kota Kuala Kedah</a>
+                <a href="3arkeolb.html">3. Muzium Arkeologi Lembah Bujang</a>
+                <a href="4krm.html">4. Kedah Royal Musuem</a>
+                <a href="5ksm.html">5. Kedah State Musuem</a>
+                <a href="6sbas.html">6. Tapak Arkeologi Sungai Batu</a>
+                <a href="7ksag.html">7. Kedah State Art Gallery</a>
+                <a href="8cbbp.html">8. Candi Bukit Batu Pahat</a>
+                <a class="active" href="9is.html">9. Istana Sepachendera</a>
+                <a href="10gakm.html">10. Gallery Archeotourism Kuala Muda</a>
+              </div>
+            </li>
+
+            <li><a href="feedback.html">Feedback</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Content -->
+
+    <section class="hero">
+      <div class="hero-eyebrow">#1 Historical Place</div>
+        <h1>Istana Sepachenderar</h1>
+        <p>A journey across centuries and continents — from temples carved by hand to walls built to keep empires apart. Choose a destination below to begin exploring.</p>
+    </section>
+
+    <section class="gallery">
+
+      <a href="istana.jpg" data-lightbox="gallery">
+        <img src="istana.jpg" class="main-image">
+      </a>
+
+      <div class="thumbnail-row">
+
+          <a href="is1.jpg" data-lightbox="gallery">
+            <img src="is1.jpg">
+          </a>
+          <a href="is2.jpg" data-lightbox="gallery">
+            <img src="is2.jpg">
+          </a>
+          <a href="is3.jpg" data-lightbox="gallery">
+            <img src="is3.jpg">
+          </a>
+          <a href="is4.jpg" data-lightbox="gallery">
+            <img src="is4.jpg">
+          </a>
+
+       </div>
+
+    </section>
+
+    <section class="quick-info">
+
+      <h2>Quick Information</h2>
+
+      <div class="info-grid">
+
+          <div class="info-card">
+              <h3>📍 Location</h3>
+              <p>Alor Setar, Kedah</p>
+          </div>
+
+          <div class="info-card">
+              <h3>🏛 Category</h3>
+              <p>Royal Palace</p>
+          </div>
+
+          <div class="info-card">
+              <h3>📅 Established</h3>
+              <p>Built in the late 19th century</p>
+          </div>
+
+          <div class="info-card">
+              <h3>⭐ Historical Significance</h3>
+              <p>Historic royal residence showcasing Indo-Saracenic architectural influences</p>
+          </div>
+
+          <div class="info-card">
+              <h3>🕘 Opening Hours</h3>
+              <p>Exterior viewing only</p>
+          </div>
+
+          <div class="info-card">
+              <h3>🎟 Admission</h3>
+              <p>Free (Exterior)</p>
+          </div>
+
+          <div class="info-card">
+              <h3>☎ Contact</h3>
+              <p>04-735 4270</p>
+          </div>
+
+      </div>
+
+    </section>
+
+   </section>
+
+    <section class="content-section">
+
+      <h2>About the Place</h2>
+        <p>
+            Istana Sepachendera is a historic royal palace located in Alor Setar. It was built for Sultan Abdul Hamid Halim Shah in the late nineteenth century.
+        </p>
+
+    </section>
+    
+      <br>
+
+      <div class="image-row">
+        <img src="tdmvisithour.jpg" alt="tdmbanner">
+        <img src="tdminfobanner.jpg" alt="tdmphoto1">
+        <img src="tdmyard.jpg" alt="tdmphoto2">
+        <img src="tdmfav.jpg" alt="tdmphoto3">
+        <img src="tdmdiorama.jpg" alt="tdmphoto4">
+      </div>
+
+      <br>
+      
+      <section class="content-section">
+
+        <h2>Historical Background</h2>
+          <p>
+              The palace combines Malay and European architectural influences and served as a royal residence. Although no longer used as an official palace, it remains an important heritage building.
+          </p>
+
+      </section>
+      
+      <section class="content-section">
+
+          <h2>Historical Significance</h2>
+          <ul>
+              <li>Reflects royal architecture of the late nineteenth century.</li>
+              <li>Symbolises Kedah's royal history.</li>
+              <li>Demonstrates European influence on Malay palace design.</li>
+              <li>Preserved as a cultural heritage site.</li>
+          </ul>
+
+      </section>
+
+      <section class="content-section">
+
+          <h2>Visitor Information</h2>
+
+          <p>
+              Visitors can tour the original house, view historical artefacts,
+              photographs, personal belongings, and interactive displays explaining
+              Tun Dr. Mahathir's early life and achievements.
+          </p>
+
+      </section>
+      
+      <section class="map-section">
+
+        <h2>Location</h2>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7675.842249184015!2d100.36946669999999!3d6.1230181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b44b900ef0f77%3A0xeda34d5b8fb7544a!2sISTANA%20CHE%20SEPACHANDRA!5e1!3m2!1sen!2smy!4v1782588872625!5m2!1sen!2smy"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+      </section>
+
+      <section class="page-navigation">
+          <a href="8cbbp.html" class="nav-btn">← Previous</a>
+          <a href="#" class="top-btn">↑ Back to Top</a>
+          <a href="10gakm.html" class="nav-btn">Next →</a>
+      </section>
+
+      <footer class="site-footer">
+        10 Historical Places — IML470 Web Design and Development
+        <br>
+        IML470 Web Design and Development
+        <br>
+        Faculty of Information Management
+        <p>Universiti Teknologi MARA</p>
+        <br>
+        © 2026 All Rights Reserved
+      </footer>
+
+      <!-- Script -->
+      <script src="lightbox2-2.12.0/dist/js/lightbox-plus-jquery.min.js"></script>
+  
+</body>
+</html>
