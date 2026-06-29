@@ -156,13 +156,14 @@
     }
 
     .thumbnail-row{
-        display:flex;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
         gap:15px;
         margin-top:20px;
     }
 
     .thumbnail-row img{
-        flex:1;
+        width: 100%;
         height:140px;
         object-fit:cover;
         border-radius:10px;
@@ -432,10 +433,6 @@
           </a>
           <a href="tdmphoto4.jpg" data-lightbox="gallery">
             <img src="tdmphoto4.jpg">
-          </a>
-           <a href="tdmphoto5.jpg" data-lightbox="gallery">
-            <img src="tdmphoto5.jpg">
-          </a>
 
        </div>
 
@@ -450,11 +447,6 @@
           <div class="info-card">
               <h3>📍 Location</h3>
               <p>Alor Setar, Kedah</p>
-          </div>
-
-          <div class="info-card">
-              <h3>🏛 Category</h3>
-              <p>Heritage House Museum</p>
           </div>
 
           <div class="info-card">

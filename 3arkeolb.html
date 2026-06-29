@@ -159,13 +159,14 @@
     }
 
     .thumbnail-row{
-        display:flex;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
         gap:15px;
         margin-top:20px;
     }
 
     .thumbnail-row img{
-        flex:1;
+        width: 100%;
         height:140px;
         object-fit:cover;
         border-radius:10px;
@@ -459,11 +460,6 @@
           </div>
 
           <div class="info-card">
-              <h3>🏛 Category</h3>
-              <p>Archaeological Museum</p>
-          </div>
-
-          <div class="info-card">
               <h3>📅 Established</h3>
               <p>Museum opened in 1980</p>
           </div>
@@ -532,20 +528,41 @@
       </section>
 
 
-      <div class="image-row">
-        <img src="lb7.jpg" alt="lembahbujang">
-        <img src="lb8.jpg" alt="lembahbujang">
-        <img src="lb9.jpg" alt="lembahbujang">
-        <img src="lb10.jpg" alt="lembahbujang">
-        </div>
-        <br>
-        <div class="image-row">
-        <img src="lb11.jpg" alt="lembahbujang">
-        <img src="lb12.jpg" alt="lembahbujang">
-        <img src="lb15.jpg" alt="lembahbujang">
-        <img src="lb16.jpg" alt="lembahbujang">
-        </div>
-      </section>
+      <section class="gallery">
+
+        <h2>Gallery</h2>
+
+        <div class="thumbnail-row">
+
+            <a href="lb6.jpg" data-lightbox="gallery">
+                <img src="lb6.jpg">
+            </a>
+            </a>
+            <a href="lb7.jpg" data-lightbox="gallery">
+                <img src="lb7.jpg">
+            </a>
+            <a href="lb8.jpg" data-lightbox="gallery">
+                <img src="lb8.jpg">
+            </a>
+            <a href="lb9.jpg" data-lightbox="gallery">
+                <img src="lb9.jpg">
+            </a>
+            <a href="lb10.jpg" data-lightbox="gallery">
+                <img src="lb10.jpg">
+            </a>
+            <a href="lb11.jpg" data-lightbox="gallery">
+                <img src="lb11.jpg">
+            </a>
+            <a href="lb12.jpg" data-lightbox="gallery">
+                <img src="lb12.jpg">
+            </a>
+            <a href="lb13.jpg" data-lightbox="gallery">
+                <img src="lb13.jpg">
+            </a>
+            
+            </div>
+
+        </section>
 
       <section class="map-section">
 

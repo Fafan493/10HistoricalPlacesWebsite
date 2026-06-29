@@ -156,13 +156,14 @@
     }
 
     .thumbnail-row{
-        display:flex;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
         gap:15px;
         margin-top:20px;
     }
 
     .thumbnail-row img{
-        flex:1;
+        width: 100%;
         height:140px;
         object-fit:cover;
         border-radius:10px;
@@ -457,11 +458,6 @@
           </div>
 
           <div class="info-card">
-              <h3>🏛 Category</h3>
-              <p>Archaeological Gallery</p>
-          </div>
-
-          <div class="info-card">
               <h3>📅 Established</h3>
               <p>Modern heritage interpretation gallery</p>
           </div>
@@ -530,6 +526,37 @@
 
       </section>
 
+      <section class="gallery">
+
+        <div class="thumbnail-row">
+
+            <a href="gakm5.jpg" data-lightbox="gallery">
+                <img src="gakm5.jpg">
+            </a>
+            </a>
+            <a href="gakm6.jpg" data-lightbox="gallery">
+                <img src="gakm6.jpg">
+            </a>
+            <a href="gakm7.jpg" data-lightbox="gallery">
+                <img src="gakm7.jpg">
+            </a>
+            
+            </div>
+
+        </section>
+
+      <section class="content-section">
+
+          <h2>Facilities</h2>
+          <ul>
+              <li>Multi-purpose room</li>
+              <li>Auditorium</li>
+              <li>Souvenier shop</li>
+              <li>Auditorium</li>
+          </ul>
+
+      </section>
+
       <section class="content-section">
 
           <h2>Visitor Information</h2>
@@ -539,6 +566,27 @@
           </p>
 
       </section>
+
+      <section class="gallery">
+
+        <h2>Gallery</h2>
+
+        <div class="thumbnail-row">
+
+            <a href="gakm8.jpg" data-lightbox="gallery">
+                <img src="gakm8.jpg">
+            </a>
+            </a>
+            <a href="gakm9.jpg" data-lightbox="gallery">
+                <img src="gakm9.jpg">
+            </a>
+            <a href="gakm10.jpg" data-lightbox="gallery">
+                <img src="gakm10.jpg">
+            </a>
+            
+            </div>
+
+        </section>
 
       <section class="map-section">
 

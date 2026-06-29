@@ -158,13 +158,14 @@
     }
 
     .thumbnail-row{
-        display:flex;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
         gap:15px;
         margin-top:20px;
     }
 
     .thumbnail-row img{
-        flex:1;
+        width: 100%;
         height:140px;
         object-fit:cover;
         border-radius:10px;
@@ -250,7 +251,7 @@
         line-height:2;
     }
 
-      .hero {
+    .hero {
         padding: 90px 8vw 70px;
         border-bottom: 1px solid var(--line);
         position: relative;
@@ -457,11 +458,6 @@
           </div>
 
           <div class="info-card">
-              <h3>🏛 Category</h3>
-              <p>Historical Fort Museum</p>
-          </div>
-
-          <div class="info-card">
               <h3>📅 Established</h3>
               <p>Originally built in the late 18th century</p>
           </div>
@@ -498,24 +494,6 @@
         </p>
 
     </section>
-    
-      <br>
-
-    <div class="image-row">
-      <img src="kkk1.jpg" alt="tdmbanner">
-      <img src="kkk2.jpg" alt="tdmphoto1">
-      <img src="kkk3.jpg" alt="tdmphoto2">
-      <img src="kkk4.jpg" alt="tdmphoto3">
-    </div>
-    <br>
-    <div class="image-row">
-      <img src="kkk5.jpg" alt="tdmphoto4">
-      <img src="kkk11.jpg" alt="lembahbujang">
-      <img src="kkk12.jpg" alt="lembahbujang">
-      <img src="kkk13.jpg" alt="lembahbujang">
-    </div>
-
-    <br>
 
     <section class="content-section">
 
@@ -548,26 +526,53 @@
 
       </section>
   
-    <div class="image-row">
-      <img src="kkk6.jpg" alt="tdmbanner">
-      <img src="kkk7.jpg" alt="tdmphoto1">
-      <img src="kkk8.jpg" alt="tdmphoto2">
-      <img src="kkk9.jpg" alt="tdmphoto3">
-    </div>
-    <br>
-    <div class="image-row">
-      <img src="kkk10.jpg" alt="tdmphoto4">
-      <img src="kkk14.jpg" alt="lembahbujang">
-      <img src="kkk15.jpg" alt="lembahbujang">
-      <img src="kkk16.jpg" alt="lembahbujang">
-      <img src="kkk17.jpg" alt="lembahbujang">
-    </div>
-    <br>
-    <div class="image-row">
-      <img src="kkk18.jpg" alt="kkk">
-      <img src="kkk19.jpg" alt="kkk">
-    </div>
-  </section>
+    <section class="gallery">
+
+        <h2>Gallery</h2>
+
+        <div class="thumbnail-row">
+
+            <a href="kkk6.jpg" data-lightbox="gallery">
+                <img src="kkk6.jpg">
+            </a>
+            </a>
+            <a href="kkk7.jpg" data-lightbox="gallery">
+                <img src="kkk7.jpg">
+            </a>
+            <a href="kkk8.jpg" data-lightbox="gallery">
+                <img src="kkk8.jpg">
+            </a>
+            <a href="kkk9.jpg" data-lightbox="gallery">
+                <img src="kkk9.jpg">
+            </a>
+            <a href="kkk10.jpg" data-lightbox="gallery">
+                <img src="kkk10.jpg">
+            </a>
+            <a href="kkk11.jpg" data-lightbox="gallery">
+                <img src="kkk11.jpg">
+            </a>
+            <a href="kkk12.jpg" data-lightbox="gallery">
+                <img src="kkk12.jpg">
+            </a>
+            <a href="kkk13.jpg" data-lightbox="gallery">
+                <img src="kkk13.jpg">
+            </a>
+            <a href="kkk14.jpg" data-lightbox="gallery">
+                <img src="kkk14.jpg">
+            </a>
+            <a href="kkk15.jpg" data-lightbox="gallery">
+                <img src="kkk15.jpg">
+            </a>
+            <a href="kkk16.jpg" data-lightbox="gallery">
+                <img src="kkk16.jpg">
+            </a>
+            <a href="kkk17.jpg" data-lightbox="gallery">
+                <img src="kkk17.jpg">
+            </a>
+            
+            </div>
+
+        </section>
 
   <section class="map-section">
 

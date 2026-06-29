@@ -158,13 +158,14 @@
     }
 
     .thumbnail-row{
-        display:flex;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
         gap:15px;
         margin-top:20px;
     }
 
     .thumbnail-row img{
-        flex:1;
+        width: 100%;
         height:140px;
         object-fit:cover;
         border-radius:10px;
@@ -459,11 +460,6 @@
           </div>
 
           <div class="info-card">
-              <h3>🏛 Category</h3>
-              <p>State Museum</p>
-          </div>
-
-          <div class="info-card">
               <h3>📅 Established</h3>
               <p>1957</p>
           </div>
@@ -501,17 +497,6 @@
 
     </section>
 
-  <div class="image-row">
-  <img src="ksm1.jpg" alt="tdmbanner">
-  <img src="ksm2.jpg" alt="tdmphoto2">
-  <img src="ksm3.jpg" alt="tdmphoto3">
-  </div>
-<br>
-<div class="image-row">
-  <img src="ksm4.jpg" alt="tdmphoto4">
-  <img src="ksm5.jpg" alt="tdmphoto4">
-
-</div>
 
 <section class="content-section">
 
@@ -543,6 +528,36 @@
           </p>
 
       </section>
+
+      <section class="gallery">
+
+        <h2>Gallery</h2>
+
+        <div class="thumbnail-row">
+
+            <a href="ksm5.jpg" data-lightbox="gallery">
+                <img src="ksm5.jpg">
+            </a>
+            </a>
+            <a href="ksm6.jpg" data-lightbox="gallery">
+                <img src="ksm6.jpg">
+            </a>
+            <a href="ksm7.jpg" data-lightbox="gallery">
+                <img src="ksm7.jpg">
+            </a>
+            <a href="kkk9.jpg" data-lightbox="gallery">
+                <img src="kkk9.jpg">
+            </a>
+            <a href="kkk10.jpg" data-lightbox="gallery">
+                <img src="kkk10.jpg">
+            </a>
+            <a href="kkk11.jpg" data-lightbox="gallery">
+                <img src="kkk11.jpg">
+            </a>
+            
+            </div>
+
+        </section>
 
       <section class="map-section">
 

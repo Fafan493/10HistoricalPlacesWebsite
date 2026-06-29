@@ -156,13 +156,14 @@
     }
 
     .thumbnail-row{
-        display:flex;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
         gap:15px;
         margin-top:20px;
     }
 
     .thumbnail-row img{
-        flex:1;
+        width: 100%;
         height:140px;
         object-fit:cover;
         border-radius:10px;
@@ -457,11 +458,6 @@
           </div>
 
           <div class="info-card">
-              <h3>🏛 Category</h3>
-              <p>Archaeological Site</p>
-          </div>
-
-          <div class="info-card">
               <h3>📅 Established</h3>
               <p>Approximately 788 BCE (over 2,700 years old)</p>
           </div>
@@ -501,17 +497,6 @@
 
     </section>
     
-      <br>
-
-      <div class="image-row">
-        <img src="tdmvisithour.jpg" alt="tdmbanner">
-        <img src="tdminfobanner.jpg" alt="tdmphoto1">
-        <img src="tdmyard.jpg" alt="tdmphoto2">
-        <img src="tdmfav.jpg" alt="tdmphoto3">
-        <img src="tdmdiorama.jpg" alt="tdmphoto4">
-      </div>
-
-      <br>
       
       <section class="content-section">
 
